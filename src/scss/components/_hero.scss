@@ -1,0 +1,224 @@
+.hero {
+  position: relative;
+  padding-top: 240px;
+  padding-bottom: 100px;
+  color: var(--color-white);
+  background: linear-gradient(105.82deg, #011512 0.68%, #052a24 100%);
+
+  &::before {
+    --bottom: calc((260 * 100%) / 1024);
+
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: var(--bottom);
+    width: var(--width);
+    height: 4px;
+    background-color: var(--color-yellow);
+
+    @include desktop-lg {
+      --bottom: calc((250 * 100%) / 1024);
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: calc((115 * 100%) / 1920);
+    bottom: calc((115 * 100%) / 1024);
+    width: 80px;
+    height: 80px;
+    background-image: url("../img/sprite.svg#arrow");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: bottom 3s linear infinite;
+
+    @include tablet {
+      bottom: calc((145 * 100%) / 1024);
+      width: 50px;
+      height: 50px;
+    }
+
+    @include mobile-l {
+      bottom: calc((105 * 100%) / 1024);
+    }
+
+    @include mobile {
+      left: 20px;
+      width: 30px;
+      height: 30px;
+    }
+
+    @keyframes bottom {
+      0%,
+      100% {
+        transform: translateY(0) rotate(90deg);
+      }
+
+      50% {
+        transform: translateY(10px) rotate(90deg);
+      }
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    background-position: right;
+    background-repeat: no-repeat;
+
+    .connection {
+      &__list {
+        display: block;
+        margin-right: 75px;
+        padding-top: 25px;
+
+        @include desktop {
+          margin-right: 40px;
+        }
+
+        @include mobile-l {
+          padding-top: 15px;
+        }
+
+        @include mobile-s {
+          margin-right: 20px;
+          padding-top: 10px;
+        }
+      }
+
+      &__item {
+        &:not(:last-child) {
+          margin: 0;
+          margin-bottom: 50px;
+
+          @include mobile-l {
+            margin-bottom: 25px;
+          }
+        }
+      }
+    }
+
+    @include mobile-l {
+      background-image: none !important;
+    }
+  }
+
+  &__inner {
+    .btn {
+      margin-bottom: 65px;
+
+      @include mobile-l {
+        margin-bottom: 35px;
+      }
+
+      @include mobile-s {
+        padding: 5px 70px 5px 5px;
+        font-size: 20px;
+
+        &::before {
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 80px;
+
+    mark {
+      color: var(--color-yellow);
+      background-color: transparent;
+    }
+
+    span {
+      display: block;
+      padding-left: 240px;
+      color: var(--color-white);
+
+      @include desktop-lg {
+        padding-left: 100px;
+      }
+
+      @include tablet {
+        padding-left: 50px;
+      }
+
+      @include mobile-l {
+        padding-left: 0;
+      }
+    }
+
+    @include desktop {
+      font-size: 60px;
+    }
+
+    @include mobile {
+      font-size: 40px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 50px;
+    width: 100%;
+    max-width: 650px;
+    font-size: 36px;
+    line-height: 1.2;
+
+    @include tablet {
+      max-width: fit-content;
+      font-size: 30px;
+    }
+
+    @include mobile {
+      font-size: 25px;
+    }
+  }
+
+  @include desktop-lg {
+    padding-top: 160px;
+  }
+
+  @include tablet {
+    padding-top: 100px;
+  }
+
+  @include mobile-l {
+    padding-bottom: 50px;
+  }
+
+  @include mobile-s {
+    padding-bottom: 20px;
+  }
+}
+
+.hero-awards {
+  display: flex;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 110px;
+
+      @include desktop {
+        margin-right: 60px;
+      }
+
+      @include tablet {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  &__img {
+    height: auto;
+    filter: brightness(0) saturate(100%) invert(95%) sepia(14%) saturate(2146%) hue-rotate(316deg) brightness(90%)
+      contrast(84%);
+  }
+}

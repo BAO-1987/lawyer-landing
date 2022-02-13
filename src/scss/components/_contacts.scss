@@ -1,0 +1,147 @@
+.contacts {
+  position: relative;
+
+  &::before {
+    --width: calc((1190 / 1920) * 100%);
+
+    content: "";
+    position: absolute;
+    left: 0;
+    top: var(--top);
+    width: var(--width);
+    height: 4px;
+    background-color: var(--color-yellow);
+
+    @include desktop {
+      top: 15%;
+    }
+
+    @include mobile-l {
+      top: 10%;
+    }
+
+    @include mobile-s {
+      top: 8%;
+    }
+
+    @include mobile-ss {
+      top: 12%;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    padding-right: max(15px, calc((100% - 1440px) / 2));
+
+    @include mobile-l {
+      flex-direction: column;
+      padding-left: max(15px, calc((100% - 1440px) / 2));
+      gap: 50px;
+    }
+  }
+
+  &__content {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 450px;
+
+    @include desktop {
+      margin: 0 auto;
+      max-width: 350px;
+    }
+  }
+
+  &__box {
+    position: relative;
+    margin-right: 40px;
+    width: calc(100% - 490px);
+
+    @include desktop {
+      width: calc(100% - 390px);
+    }
+
+    @include mobile-l {
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    margin-bottom: 125px;
+    padding-top: 20px;
+    gap: 40px;
+
+    @include tablet {
+      margin-bottom: 50px;
+    }
+
+    @include mobile-l {
+      margin-bottom: 30px;
+      padding-top: 0;
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 85px;
+    width: 100%;
+    min-height: 60px;
+    max-width: 340px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 60px;
+      height: 60px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      @include mobile-l {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    &--address {
+      &::before {
+        background-image: url("../img/sprite.svg#map");
+      }
+    }
+
+    &--working {
+      &::before {
+        background-image: url("../img/sprite.svg#clock");
+      }
+    }
+
+    &--phone {
+      display: grid;
+
+      &::before {
+        background-image: url("../img/sprite.svg#old-phone");
+      }
+    }
+
+    &--mail {
+      display: grid;
+      align-items: center;
+
+      &::before {
+        background-image: url("../img/sprite.svg#mail");
+      }
+    }
+  }
+
+  &__link {
+    transition: color 0.3s linear;
+
+    &:hover {
+      color: var(--color-yellow);
+    }
+  }
+}

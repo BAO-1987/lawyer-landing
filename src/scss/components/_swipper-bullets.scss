@@ -1,0 +1,22 @@
+.swiper-pagination-bullet {
+  display: inline-block;
+  margin: 0;
+  margin-right: 40px;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  background-color: #e0e0e0;
+  opacity: 1;
+
+  @include mobile {
+    margin-right: 20px;
+  }
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--color-yellow);
+}
+
+.swiper-bullets {
+  text-align: center;
+}

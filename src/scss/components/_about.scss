@@ -1,0 +1,75 @@
+.about {
+  position: relative;
+
+  &::before {
+    --width: calc((1355 / 1920) * 100%);
+
+    content: "";
+    position: absolute;
+    left: 0;
+    top: var(--top);
+    width: var(--width);
+    height: 4px;
+    background-color: var(--color-yellow);
+
+    @include desktop {
+      top: 15%;
+    }
+
+    @include tablet {
+      top: 8%;
+    }
+
+    @include mobile {
+      top: 6%;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    margin: 0 auto;
+    padding-left: max(15px, calc((100% - 1440px) / 2));
+
+    @include tablet {
+      flex-direction: column-reverse;
+      padding-right: max(15px, calc((100% - 1440px) / 2));
+      gap: 50px;
+    }
+  }
+
+  &__content {
+    flex-shrink: 0;
+    margin-right: 40px;
+    width: 100%;
+    max-width: 700px;
+
+    p {
+      margin: 0;
+      margin-bottom: 10px;
+    }
+
+    @include desktop-lg {
+      max-width: 550px;
+    }
+
+    @include tablet {
+      margin: 0;
+      max-width: fit-content;
+      text-align: center;
+    }
+  }
+
+  &__box {
+    width: calc(100% - 740px);
+
+    @include desktop-lg {
+      width: calc(100% - 550px);
+    }
+
+    @include tablet {
+      margin: 0 auto;
+      width: fit-content;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,112 @@
+.advantages {
+  margin-bottom: 100px;
+
+  @include desktop-lg {
+    margin-bottom: 80px;
+  }
+
+  @include mobile-l {
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+
+    @include desktop {
+      gap: 20px;
+    }
+
+    @include tablet {
+      justify-content: center;
+      justify-items: center;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile-l {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__item {
+    position: relative;
+    border: 2px solid transparent;
+    padding: 20px 20px 30px;
+    width: 100%;
+    max-width: 455px;
+    box-shadow: 0 4px 20px rgba(162 162 162 / 30%);
+    transition: border 0.5s linear background 0.5s linear;
+
+    h3 {
+      overflow-wrap: break-word;
+      width: 100%;
+      max-width: 295px;
+      font-weight: 600;
+      font-size: 24px;
+      color: var(--color-green);
+    }
+
+    p {
+      margin: 5px;
+      font-size: 18px;
+    }
+
+    &:hover {
+      border-color: var(--color-yellow);
+      background: var(--line-gradient);
+    }
+
+    @include mobile-s {
+      padding: 10px 10px 20px;
+    }
+  }
+
+  &__icon {
+    @include flex-v-center;
+
+    position: relative;
+    margin-bottom: 25px;
+    padding-left: 85px;
+    min-height: 80px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 60px;
+      height: 60px;
+      background-image: url("../img/sprite.svg#lock");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      @include mobile-ss {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    &--lock {
+      &::before {
+        background-image: url("../img/sprite.svg#lock");
+      }
+    }
+
+    &--people {
+      &::before {
+        background-image: url("../img/sprite.svg#people");
+      }
+    }
+
+    &--court {
+      &::before {
+        background-image: url("../img/sprite.svg#court");
+      }
+    }
+
+    @include mobile-s {
+      padding-left: 65px;
+    }
+  }
+}
