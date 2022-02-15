@@ -17,11 +17,19 @@
     }
 
     @include tablet {
+      top: 14%;
+    }
+
+    @include mobile-l {
+      top: 6%;
+    }
+
+    @include mobile {
       top: 10%;
     }
 
-    @include mobile-s {
-      top: 15%;
+    @include mobile-ss {
+      top: 10%;
     }
   }
 

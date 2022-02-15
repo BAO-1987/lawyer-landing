@@ -5,13 +5,13 @@ import { enableScroll } from '../functions/enable-scroll';
   const burger = document?.querySelector('[data-burger]');
   const menu = document?.querySelector('[data-menu]');
   const menuItems = document?.querySelectorAll('[data-menu-item]');
-  const overlay = document?.querySelector('.overlay');
+  const overlay = document?.querySelector('.site-container');
 
 
   burger?.addEventListener('click', (e) => {
     burger?.classList.toggle('burger--active');
     menu?.classList.toggle('nav__list--active');
-    overlay.classList.toggle('overlay--active');
+    overlay.classList.toggle('is-active');
 
     if (menu?.classList.contains('nav__list--active')) {
       burger?.setAttribute('aria-expanded', 'true');
@@ -28,7 +28,7 @@ import { enableScroll } from '../functions/enable-scroll';
     el.addEventListener('click', () => {
       burger.classList.remove('burger--active');
       menu.classList.remove('nav__list--active');
-      overlay.classList.remove('overlay--active');
+      overlay.classList.remove('is-active');
       enableScroll();
     });
   });

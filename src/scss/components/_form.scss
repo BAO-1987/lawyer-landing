@@ -70,9 +70,9 @@
   border-color: var(--color-yellow) transparent transparent;
 }
 
-.choices[data-type*="select-one"]::after .is-open {
-  border-width: 5px;
-  border-color: var(--color-yellow) transparent transparent;
+.choices[data-type*="select-one"].is-open:after {
+  border-color: transparent transparent var(--color-yellow) transparent;
+  margin-top: -7.5px;
 }
 
 .choices__list--dropdown .choices__item {
@@ -83,6 +83,7 @@
 .is-open .choices__inner {
   border-color: var(--color-yellow);
 }
+
 
 .just-validate-error-label {
   position: absolute;

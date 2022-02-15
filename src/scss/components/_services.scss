@@ -20,11 +20,11 @@
     }
 
     @include mobile-l {
-      top: 6%;
+      top: 8%;
     }
 
-    @include mobile-ss {
-      top: 10%;
+    @include mobile-s {
+      top: 6%;
     }
   }
 
@@ -113,11 +113,19 @@
       font-weight: 600;
       font-size: 24px;
       color: var(--color-green);
+
+      @include mobile-s {
+        font-size: 20px;
+      }
     }
 
     p {
       margin: 0;
       font-size: 18px;
+
+      @include mobile-ss {
+        font-size: 16px;
+      }
     }
 
     &:hover {
@@ -148,6 +156,17 @@
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
+
+      @include mobile-s {
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    @include mobile-s {
+      margin-bottom: 15px;
+      padding-left: 55px;
+      min-height: 65px;
     }
 
     &--people {

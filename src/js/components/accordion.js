@@ -1,4 +1,4 @@
-const questions = document.querySelectorAll(".faq__item");
+const questions = document?.querySelectorAll(".faq__item");
 
 questions.forEach((el) => {
 

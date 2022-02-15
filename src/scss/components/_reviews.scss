@@ -13,6 +13,10 @@
     @include desktop {
       top: 15%;
     }
+
+    @include mobile-l {
+      top: 10%;
+    }
   }
 
   &__slider {
@@ -22,6 +26,10 @@
 
   &__list {
     margin-bottom: 60px;
+
+    @include mobile-s {
+      margin-bottom: 30px;
+    }
   }
 
   &__blockquote {
@@ -38,6 +46,12 @@
 
     &:hover {
       border-color: var(--color-yellow);
+    }
+
+    @include mobile {
+      justify-items: center;
+      grid-template-columns: repeat(1, auto);
+      text-align: center;
     }
   }
 
@@ -68,6 +82,10 @@
   p {
     margin: 0;
     margin-bottom: 10px;
+
+    @include mobile-s {
+      font-size: 18px;
+    }
   }
 
   p:last-of-type {

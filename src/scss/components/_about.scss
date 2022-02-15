@@ -46,6 +46,14 @@
     p {
       margin: 0;
       margin-bottom: 10px;
+
+      @include mobile-s {
+        font-size: 18px;
+      }
+
+      @include mobile-ss {
+        font-size: 16px;
+      }
     }
 
     @include desktop-lg {

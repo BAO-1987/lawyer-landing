@@ -8,8 +8,8 @@ import Inputmask from "inputmask";
 console.log('Init!');
 
 // inputmask
-const form = document.querySelector('.form');
-const telSelector = form.querySelector('input[type="tel"]');
+const form = document?.querySelector('.form');
+const telSelector = form?.querySelector('input[type="tel"]');
 const inputMask = new Inputmask('+380 99-999-99-99');
 inputMask.mask(telSelector);
 

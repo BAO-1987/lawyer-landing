@@ -1,14 +1,6 @@
 .advantages {
   margin-bottom: 100px;
 
-  @include desktop-lg {
-    margin-bottom: 80px;
-  }
-
-  @include mobile-l {
-    margin-bottom: 40px;
-  }
-
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -45,11 +37,19 @@
       font-weight: 600;
       font-size: 24px;
       color: var(--color-green);
+
+      @include mobile-s {
+        font-size: 20px;
+      }
     }
 
     p {
-      margin: 5px;
+      margin-bottom: 5px;
       font-size: 18px;
+
+      @include mobile-ss {
+        font-size: 16px;
+      }
     }
 
     &:hover {
@@ -81,9 +81,9 @@
       background-size: cover;
       background-repeat: no-repeat;
 
-      @include mobile-ss {
-        width: 50px;
-        height: 50px;
+      @include mobile-s {
+        width: 45px;
+        height: 45px;
       }
     }
 
@@ -106,7 +106,17 @@
     }
 
     @include mobile-s {
-      padding-left: 65px;
+      margin-bottom: 15px;
+      padding-left: 55px;
+      min-height: 65px;
     }
+  }
+
+  @include desktop-lg {
+    margin-bottom: 80px;
+  }
+
+  @include mobile-l {
+    margin-bottom: 40px;
   }
 }

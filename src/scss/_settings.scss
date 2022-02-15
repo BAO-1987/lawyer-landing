@@ -4,7 +4,30 @@
 }
 
 .site-container {
+  position: relative;
   overflow: hidden;
+
+  &::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    background: linear-gradient(105.82deg, #011512 0.68%, #052a24 100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.site-container.is-active {
+  &::before {
+    z-index: 500;
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .page__body {
@@ -122,6 +145,10 @@
   @include mobile-l {
     font-size: 25px;
   }
+
+  @include mobile-s {
+    font-size: 20px;
+  }
 }
 
 .title {
@@ -139,6 +166,10 @@
 
   @include mobile-l {
     font-size: 30px;
+  }
+
+  @include mobile-s {
+    font-size: 25px;
   }
 }
 
@@ -209,12 +240,16 @@ section {
   &__item {
     &:not(:last-child) {
       margin-right: 30px;
+
+      @include mobile-ss {
+        margin-right: 20px;
+      }
     }
   }
 }
 
 .dis-scroll {
-  // stylelint-disable-line declaration-no-important
+  /* stylelint-disable-next-line declaration-block-no-duplicate-properties */
 
   position: relative;
   overflow: hidden;
@@ -223,22 +258,4 @@ section {
   left: 0;
   top: 0;
   width: 100%;
-}
-
-.overlay {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 500;
-  background: linear-gradient(105.82deg, #011512 0.68%, #052a24 100%);
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.6s ease-in-out;
-
-  &--active {
-    opacity: 1;
-    visibility: visible;
-  }
 }

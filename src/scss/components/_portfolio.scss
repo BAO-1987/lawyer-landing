@@ -13,6 +13,14 @@
     @include desktop {
       top: 15%;
     }
+
+    @include mobile-l {
+      top: 12%;
+    }
+
+    @include mobile-s {
+      top: 10%;
+    }
   }
 
   &__slider {

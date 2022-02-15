@@ -25,7 +25,7 @@
     }
 
     @include mobile-ss {
-      top: 12%;
+      top: 10%;
     }
   }
 
@@ -134,6 +134,14 @@
       &::before {
         background-image: url("../img/sprite.svg#mail");
       }
+    }
+
+    @include mobile-s {
+      padding-left: 60px;
+    }
+
+    @include mobile-ss {
+      font-size: 18px;
     }
   }
 
