@@ -1,38 +1,6 @@
 .consultation {
   position: relative;
 
-  &::before {
-    --width: calc((1355 / 1920) * 100%);
-
-    content: "";
-    position: absolute;
-    left: 0;
-    top: var(--top);
-    width: var(--width);
-    height: 4px;
-    background-color: var(--color-yellow);
-
-    @include desktop {
-      top: 15%;
-    }
-
-    @include tablet {
-      top: 14%;
-    }
-
-    @include mobile-l {
-      top: 6%;
-    }
-
-    @include mobile {
-      top: 10%;
-    }
-
-    @include mobile-ss {
-      top: 10%;
-    }
-  }
-
   &__inner {
     display: flex;
     margin: 0 auto;
@@ -103,6 +71,7 @@
 
   p {
     margin: 0;
+    text-align: center;
   }
 
   @include desktop-lg {
@@ -119,5 +88,9 @@
 
   @include tablet {
     font-size: 20px;
+  }
+
+  @include mobile {
+    left: 10%;
   }
 }

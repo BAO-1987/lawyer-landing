@@ -6,7 +6,7 @@
   --color-yellow: #d5aa6d;
   --color-gray: #4f4f4f;
   --line-gradient: linear-gradient(144deg, #fbeb7e 83%, #f7ce68 99%);
-  --width: calc((945 / 1920) * 100%);
+  --width: calc((945 / 1920) * 100vw);
   --top: calc((200 / 1024) * 100%);
   --line-gradient-bg: linear-gradient(105.82deg, #011512 0.68%, #052a24 100%);
 }

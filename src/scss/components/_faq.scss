@@ -1,37 +1,12 @@
 .faq {
-  position: relative;
-
-  &::before {
-    --width: calc((1065 / 1920) * 100%);
-
-    content: "";
-    position: absolute;
-    right: 0;
-    top: var(--top);
-    width: var(--width);
-    height: 4px;
-    background-color: var(--color-yellow);
-
-    @include desktop-lg {
-      --width: calc((840 / 1920) * 100%);
-    }
-
-    @include tablet {
-      top: 15%;
-    }
-
-    @include mobile-l {
-      left: 0;
-    }
-
-    @include mobile-ss {
-      top: 12%;
-    }
-  }
-
   &__inner {
     display: flex;
     padding-right: max(15px, calc((100% - 1440px) / 2));
+
+    @include desktop {
+      justify-content: center;
+      padding-left: max(15px, calc((100% - 1440px) / 2));
+    }
   }
 
   &__content {
@@ -43,13 +18,7 @@
       max-width: 625px;
     }
 
-    @include tablet {
-      max-width: 425px;
-    }
-
-    @include mobile-l {
-      margin: 0 auto;
-      padding-left: max(15px, calc((100% - 1440px) / 2));
+    @include desktop {
       max-width: fit-content;
     }
   }
@@ -62,21 +31,20 @@
       width: calc(100% - 665px);
     }
 
-    @include tablet {
-      margin-right: 20px;
-      width: calc(100% - 465px);
-    }
-
-    @include mobile-l {
+    @include desktop {
       display: none;
     }
+  }
+
+  &__img {
+    height: auto;
   }
 
   &__list {
     display: grid;
     gap: 40px;
 
-    @include mobile-s {
+    @include desktop-lg {
       gap: 20px;
     }
   }
@@ -85,60 +53,43 @@
     position: relative;
     border: 2px solid var(--color-yellow);
     padding: 10px 85px 10px 10px;
+    color: var(--color-gray);
     cursor: pointer;
 
-    &--active {
-      .faq__title {
-        color: var(--color-yellow);
-      }
-
-      .faq__text {
-        display: block;
-        height: auto;
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .faq__btn {
-        &::before {
-          background-image: url("../img/sprite.svg#arrow-down");
-          transform: rotate(180deg);
-        }
-      }
-    }
-
-    @include mobile-s {
-      padding: 5px;
+    @include mobile {
+      padding: 12px;
     }
   }
 
   &__title {
+    max-width: fit-content;
     font-weight: 600;
     font-size: 24px;
-    transition: color 0.3s linear;
+    color: var(--color-gray);
+    transition: color 0.5s linear;
 
     &:hover {
       color: var(--color-yellow);
     }
 
-    @include tablet {
+    @include desktop {
       font-size: 20px;
     }
 
-    @include mobile-s {
-      font-weight: 400;
+    @include mobile {
+      font-size: 18px;
     }
 
-    @include mobile-ss {
-      font-size: 18px;
+    @include mobile-s {
+      font-size: 16px;
     }
   }
 
   &__btn {
     position: absolute;
-    right: 0;
     top: 15px;
-    transition: rotate 0.3s ease-out;
+    width: 100%;
+    transition: rotate 0.5s ease-out;
 
     &::before {
       content: "";
@@ -147,19 +98,54 @@
       width: 24px;
       height: 24px;
       background-image: url("../img/sprite.svg#arrow-down");
-      background-position: top;
+      background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
+
+      // @include mobile {
+      //   top: -5px;
+      // }
+
+      //   @include mobile-s {
+      //   right: 5px;
+      // }
     }
   }
 
   &__text {
-    display: none;
     overflow: hidden;
     width: 100%;
-    height: 0;
+    max-width: 825px;
+    max-height: 0;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.5s linear;
+    will-change: max-height;
+
+    @include mobile {
+      font-size: 18px;
+    }
+
+    @include mobile-s {
+      font-size: 16px;
+    }
+  }
+
+  .is-open {
+    .faq__title {
+      color: var(--color-yellow);
+    }
+
+    .faq__text {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .faq__btn {
+      &::before {
+        background-image: url("../img/sprite.svg#arrow-down");
+        transform: rotate(180deg);
+      }
+    }
   }
 }

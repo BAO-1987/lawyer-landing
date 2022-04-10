@@ -1,24 +1,4 @@
 .reviews {
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: var(--top);
-    width: var(--width);
-    height: 4px;
-    background-color: var(--color-yellow);
-
-    @include desktop {
-      top: 15%;
-    }
-
-    @include mobile-l {
-      top: 10%;
-    }
-  }
-
   &__slider {
     position: relative;
     overflow: hidden;
@@ -48,7 +28,7 @@
       border-color: var(--color-yellow);
     }
 
-    @include mobile {
+    @include mobile-l {
       justify-items: center;
       grid-template-columns: repeat(1, auto);
       text-align: center;
@@ -77,6 +57,10 @@
     font-style: normal;
     font-size: 24px;
     color: var(--color-green);
+
+    @include mobile-s {
+      font-size: 20px;
+    }
   }
 
   p {

@@ -1,34 +1,4 @@
 .contacts {
-  position: relative;
-
-  &::before {
-    --width: calc((1190 / 1920) * 100%);
-
-    content: "";
-    position: absolute;
-    left: 0;
-    top: var(--top);
-    width: var(--width);
-    height: 4px;
-    background-color: var(--color-yellow);
-
-    @include desktop {
-      top: 15%;
-    }
-
-    @include mobile-l {
-      top: 10%;
-    }
-
-    @include mobile-s {
-      top: 8%;
-    }
-
-    @include mobile-ss {
-      top: 10%;
-    }
-  }
-
   &__inner {
     display: flex;
     padding-right: max(15px, calc((100% - 1440px) / 2));
@@ -81,6 +51,10 @@
       margin-bottom: 30px;
       padding-top: 0;
     }
+
+    @include mobile-s {
+      gap: 20px;
+    }
   }
 
   &__item {
@@ -117,6 +91,10 @@
       &::before {
         background-image: url("../img/sprite.svg#clock");
       }
+
+      @include mobile-s {
+        display: grid;
+      }
     }
 
     &--phone {
@@ -138,9 +116,6 @@
 
     @include mobile-s {
       padding-left: 60px;
-    }
-
-    @include mobile-ss {
       font-size: 18px;
     }
   }

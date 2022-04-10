@@ -33,38 +33,31 @@
 
   &__logo {
     display: block;
-    margin-bottom: 40px;
-
-    @include tablet {
-      margin-bottom: 10px;
-    }
 
     @include mobile-l {
       text-align: center;
     }
   }
 
-  &__col {
-    p {
-      width: 100%;
-      max-width: 275px;
-      font-size: 18px;
+  &__title {
+    margin-bottom: 35px;
+  }
 
-      @include mobile-l {
-        max-width: max-content;
-        text-align: center;
-      }
+  &__col {
+    width: 100%;
+    max-width: 275px;
+    font-size: 18px;
+
+    @include mobile-l {
+      max-width: max-content;
+      text-align: center;
     }
   }
 
   &__social,
   &__contacts {
-    p {
-      margin-bottom: 35px;
-
-      @include mobile-s {
-        text-align: center;
-      }
+    @include mobile-s {
+      text-align: center;
     }
 
     @include mobile-l {

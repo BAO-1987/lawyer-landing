@@ -32,20 +32,20 @@
   justify-content: space-between;
 }
 
-$browser-context: 20; // Default
+$browser-context: 16; // Default
 
 @function rem($pixels, $context: $browser-context) {
   @return #{$pixels/$context}rem;
 }
 
 @mixin image-set($pathToImage) {
-  background-image: url("#{$pathToImage}.jpg");
+  background-image: url("#{$pathToImage}.png");
   /* stylelint-disable-next-line declaration-block-no-duplicate-properties */
   background-image: image-set(
     /* stylelint-disable-next-line function-comma-newline-after */
-    "#{$pathToImage}.avif"type("image/avif"),
-    "#{$pathToImage}.webp"type("image/webp"),
-    "#{$pathToImage}.jpg"type("image/jpg")
+    "#{$pathToImage}.avif" type("image/avif"),
+    "#{$pathToImage}.webp" type("image/webp"),
+    "#{$pathToImage}.jpg" type("image/jpg")
   );
 }
 

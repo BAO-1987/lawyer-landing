@@ -9,6 +9,9 @@ Swiper.use([Pagination, Navigation]);
 new Swiper(_vars.reviewsSlider, {
   slidesPerView: "auto",
   spaceBetween: 40,
+    autoplay: {
+      delay: 1500,
+    },
 
   navigation: {
     nextEl: '.slider-btn__next',
@@ -25,7 +28,7 @@ new Swiper(_vars.reviewsSlider, {
       slidesPerView: 1,
     },
 
-    576: {
+   576: {
       slidesPerView: 2,
       spaceBetween: 20,
     },

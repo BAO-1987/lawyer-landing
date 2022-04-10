@@ -1,17 +1,19 @@
 import _vars from '../_vars';
-import Swiper, {Pagination, Navigation} from 'swiper';
+import Swiper, {
+  Pagination,
+  Navigation
+} from 'swiper';
 
 Swiper.use([Pagination, Navigation]);
 
 new Swiper(_vars.portfolioSlider, {
   slidesPerView: "auto",
   spaceBetween: 40,
-
+ 
   navigation: {
     nextEl: '.slider-btn__next',
     prevEl: '.slider-btn__prev',
   },
-
   pagination: {
     el: ".swiper-bullets",
     clickable: true,

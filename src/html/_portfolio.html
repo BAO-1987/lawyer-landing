@@ -2,153 +2,87 @@
 
   <div class="container">
 
-    <span class="slogan" data-aos="fade-left" data-aos-delay="250">Новини</span>
+    <span class="slogan" data-aos="fade-up" data-aos-delay="250">Новини</span>
 
-    <h2 class="title" data-aos="fade-left">Успішні справи</h2>
+    <h2 class="title" data-aos="fade-up" data-aos-delay="300">Успішні справи</h2>
 
-    <div class="portfolio__slider" data-aos="fade-up">
+    <div class="portfolio__slider swiper" data-aos="fade-up" data-aos-delay="350">
 
       @include('_swiper-btns.html')
 
       <ul class="portfolio__list swiper-wrapper">
 
-        <li class="portfolio__item swiper-slide">
-
-          <article class="article">
-
-            <picture>
-              <source srcset="img/portfolio/disputs.avif" type="image/avif">
-              <source srcset="img/portfolio/disputs.webp" type="image/webp">
-              <img loading="lazy" src="img/portfolio/disputs.jpg" class="article__img" width="455" height="600"
-                alt="зображення робочої атмосфери">
-            </picture>
-
-            <div class="article__descr">
-
-              <a href="#"></a>
-
-              <span>Кредитные споры</span>
-
-              <h3>Предотвратили реализацию имущества юридического лица с торгов</h3>
-
-              <p>10 декабря 2021</p>
-
-            </div>
-
-          </article>
-
-        </li>
-
-        <li class="portfolio__item swiper-slide">
-
-          <article class="article">
-
-            <picture>
-              <source srcset="img/portfolio/interier.avif" type="image/avif">
-              <source srcset="img/portfolio/interier.webp" type="image/webp">
-              <img loading="lazy" src="img/portfolio/interier.jpg" class="article__img" width="455" height="600"
-                alt="зображення інтерєру будівлі">
-            </picture>
-
-            <div class="article__descr">
-
-              <a href="#"></a>
-
-              <span>Кредитные споры</span>
-
-              <h3>Предотвратили реализацию имущества юридического лица с торгов</h3>
-
-              <p>10 декабря 2021</p>
-
-            </div>
-
-          </article>
-
-        </li>
-
-        <li class="portfolio__item swiper-slide">
-
-          <article class="article">
-
-            <picture>
-              <source srcset="img/portfolio/people.avif" type="image/avif">
-              <source srcset="img/portfolio/people.webp" type="image/webp">
-              <img loading="lazy" src="img/portfolio/people.jpg" class="article__img" width="455" height="600"
-                alt="зображення групи людей">
-            </picture>
-
-            <div class="article__descr">
-
-              <a href="#"></a>
-
-              <span>Кредитные споры</span>
-
-              <h3>Предотвратили реализацию имущества юридического лица с торгов</h3>
-
-              <p>10 декабря 2021</p>
-
-            </div>
-
-          </article>
-
-        </li>
-
-        <li class="portfolio__item swiper-slide">
-
-          <article class="article">
-
-            <picture>
-              <source srcset="img/portfolio/interier.avif" type="image/avif">
-              <source srcset="img/portfolio/interier.webp" type="image/webp">
-              <img loading="lazy" src="img/portfolio/interier.jpg" class="article__img" width="455" height="600"
-                alt="зображення інтерєру будівлі">
-            </picture>
-
-            <div class="article__descr">
-
-              <a href="#"></a>
-
-              <span>Кредитные споры</span>
-
-              <h3>Предотвратили реализацию имущества юридического лица с торгов</h3>
-
-              <p>10 декабря 2021</p>
-
-            </div>
-
-
-
-          </article>
-
-        </li>
-
-         <li class="portfolio__item swiper-slide">
-
-           <article class="article">
-
-             <picture>
-               <source srcset="img/portfolio/interier.avif" type="image/avif">
-               <source srcset="img/portfolio/interier.webp" type="image/webp">
-               <img loading="lazy" src="img/portfolio/interier.jpg" class="article__img" width="455" height="600"
-                 alt="зображення інтерєру будівлі">
-             </picture>
-
-             <div class="article__descr">
-
-               <a href="#"></a>
-
-               <span>Кредитные споры</span>
-
-               <h3>Предотвратили реализацию имущества юридического лица с торгов</h3>
-
-               <p>10 декабря 2021</p>
-
-             </div>
-
-           </article>
-
-         </li>
-
+        @loop("_article.html",[{
+        class:"portfolio__item swiper-slide",
+        image:"portfolio/disputs",
+        imageDescr:"Зображення робочої атмосфери",
+        width:"455",
+        height:"600",
+        motto: "Кредитні спори",
+        title:"Запобігли реалізації майна юридичної особи з торгів",
+        text:"10 грудня 2021",
+        },
+        {
+        class:"portfolio__item swiper-slide",
+        image:"portfolio/interier",
+        imageDescr:"Зображення інтер'єру будівлі",
+        width:"455",
+        height:"600",
+        motto: "Кредитні спори",
+        title:"Запобігли реалізації майна юридичної особи з торгів",
+        text:"10 грудня 2021",
+        },
+        {
+        class:"portfolio__item swiper-slide",
+        image:"portfolio/people",
+        imageDescr:"Зображення робочої атмосфери",
+        width:"455",
+        height:"600",
+        motto: "Кредитні спори",
+        title:"Запобігли реалізації майна юридичної особи з торгів",
+        text:"10 грудня 2021",
+        },
+        {
+        class:"portfolio__item swiper-slide",
+        image:"portfolio/disputs",
+        imageDescr:"Зображення робочої атмосфери",
+        width:"455",
+        height:"600",
+        motto: "Кредитні спори",
+        title:"Запобігли реалізації майна юридичної особи з торгів",
+        text:"10 грудня 2021",
+        },
+        {
+        class:"portfolio__item swiper-slide",
+        image:"portfolio/interier",
+        imageDescr:"Зображення інтер'єру будівлі",
+        width:"455",
+        height:"600",
+        motto: "Кредитні спори",
+        title:"Запобігли реалізації майна юридичної особи з торгів",
+        text:"10 грудня 2021",
+        },
+        {
+        class:"portfolio__item swiper-slide",
+        image:"portfolio/interier",
+        imageDescr:"Зображення інтер'єру будівлі",
+        width:"455",
+        height:"600",
+        motto: "Кредитні спори",
+        title:"Запобігли реалізації майна юридичної особи з торгів",
+        text:"10 грудня 2021",
+        },
+        {
+        class:"portfolio__item swiper-slide",
+        image:"portfolio/interier",
+        imageDescr:"Зображення інтер'єру будівлі",
+        width:"455",
+        height:"600",
+        motto: "Кредитні спори",
+        title:"Запобігли реалізації майна юридичної особи з торгів",
+        text:"10 грудня 2021",
+        },
+       ])
       </ul>
 
       @include('_swiper-bullets.html')
@@ -158,5 +92,3 @@
   </div>
 
 </section>
-
-

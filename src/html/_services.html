@@ -2,70 +2,50 @@
 
   <div class="services__inner">
 
-    <div class="services__box" data-aos="zoom-in-left" data-aos-easing="linear" data-aos-delay="550">
+    <div class="services__box" data-aos="fade-up" data-aos-duration="500">
 
       <picture>
         <source srcset="img/services.avif" type="image/avif">
         <source srcset="img/services.webp" type="image/webp">
-        <img loading="lazy" class="services__img" src="img/services.jpg" width="695" height="860" alt="зображення статуї Феміди">
+        <img loading="lazy" class="services__img" src="img/services.jpg" width="695" height="860"
+          alt="зображення статуї Феміди">
       </picture>
 
     </div>
 
     <div class="services__content">
 
-      <span class="slogan" data-aos="fade-right">Послуги</span>
+      <span class="slogan" data-aos="fade-up" data-aos-delay="250">Послуги</span>
 
-      <h2 class="title" data-aos="fade-right">Юридичні практики</h2>
+      <h2 class="title" data-aos="fade-up" data-aos-delay="300">Юридичні практики</h2>
 
-      <ul class="services__list">
+      <ul class="services__list" data-aos="fade-up" data-aos-delay="350">
 
-        <li class="services__item" data-aos="flip-right" data-aos-delay="50">
-
-          <div class="services__icon services__icon--people">
-            <h3>Цивільне право</h3>
-          </div>
-
-          <p>Lorem ipsum dolor sit amet, con sectetu adipiscing elit, sed do eius mod tempor.</p>
-
-          <p>Lorem ipsum dolor sit amet, con sectetu adipiscing elit, sed do eius mod tempor.</p>
-
-        </li>
-
-        <li class="services__item" data-aos="flip-right" data-aos-delay="150">
-
-          <div class="services__icon services__icon--bank">
-            <h3>Господарське право</h3>
-          </div>
-
-          <p>Lorem ipsum dolor sit amet, con sectetu adipiscing elit, sed do eius mod tempor.</p>
-
-          <p>Lorem ipsum dolor sit amet, con sectetu adipiscing elit, sed do eius mod tempor.</p>
-
-        </li>
-
-        <li class="services__item" data-aos="flip-right" data-aos-delay="250">
-
-          <div class="services__icon services__icon--justice">
-            <h3>Оскарження приписів і написів</h3>
-          </div>
-
-          <p>Lorem ipsum dolor sit amet, con sectetu adipiscing elit, sed do eius mod tempor.</p>
-
-          <p>Lorem ipsum dolor sit amet, con sectetu adipiscing elit, sed do eius mod tempor.</p>
-
-        </li>
-        <li class="services__item" data-aos="flip-right" data-aos-delay="350">
-
-          <div class="services__icon services__icon--goal">
-            <h3>Корпоративні та інші права</h3>
-          </div>
-
-          <p>Lorem ipsum dolor sit amet, con sectetu adipiscing elit, sed do eius mod tempor.</p>
-
-          <p>Lorem ipsum dolor sit amet, con sectetu adipiscing elit, sed do eius mod tempor.</p>
-
-        </li>
+        @loop("_item.html",[{
+        class:"services__item",
+        icon:"services__icon services__icon--people",
+        title:"Цивільне право",
+        text:"Lorem ipsum dolor sit amet, con sectetu adipiscing elit, sed do eius mod tempor. Lorem ipsum dolor sit amet, con sectetu adipiscing elit, sed do eius mod tempor."
+        },
+        {
+        class:"services__item",
+        icon:"services__icon services__icon--bank",
+        title:"Господарське право",
+        text:"Lorem ipsum dolor sit amet, con sectetu adipiscing elit, sed do eius mod tempor. Lorem ipsum dolor sit amet, con sectetu adipiscing elit, sed do eius mod tempor."
+        },
+        {
+        class:"services__item",
+        icon:"services__icon services__icon--justice",
+        title:"Оскарження приписів і написів",
+        text:"Lorem ipsum dolor sit amet, con sectetu adipiscing elit, sed do eius mod tempor. Lorem ipsum dolor sit amet, con sectetu adipiscing elit, sed do eius mod tempor."
+        },
+        {
+        class:"services__item",
+        icon:"services__icon services__icon--goal",
+        title:"Корпоративні та інші права",
+        text:"Lorem ipsum dolor sit amet, con sectetu adipiscing elit, sed do eius mod tempor. Lorem ipsum dolor sit amet, con sectetu adipiscing elit, sed do eius mod tempor."
+        }
+        ])
 
       </ul>
 

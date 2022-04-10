@@ -1,30 +1,4 @@
 .about {
-  position: relative;
-
-  &::before {
-    --width: calc((1355 / 1920) * 100%);
-
-    content: "";
-    position: absolute;
-    left: 0;
-    top: var(--top);
-    width: var(--width);
-    height: 4px;
-    background-color: var(--color-yellow);
-
-    @include desktop {
-      top: 15%;
-    }
-
-    @include tablet {
-      top: 8%;
-    }
-
-    @include mobile {
-      top: 6%;
-    }
-  }
-
   &__inner {
     display: flex;
     margin: 0 auto;
@@ -34,6 +8,10 @@
       flex-direction: column-reverse;
       padding-right: max(15px, calc((100% - 1440px) / 2));
       gap: 50px;
+    }
+    
+    @include mobile-s {
+      gap: 20px;
     }
   }
 
@@ -47,11 +25,11 @@
       margin: 0;
       margin-bottom: 10px;
 
-      @include mobile-s {
+      @include mobile {
         font-size: 18px;
       }
 
-      @include mobile-ss {
+      @include mobile-s {
         font-size: 16px;
       }
     }
